@@ -1,0 +1,33 @@
+class First extends Thread
+{ 
+    public First()
+    {  
+   	  for(int i=0;i<=20;i++)
+	    System.out.println("a"+i); 
+    }
+} 
+class Second extends First 
+{ 
+    public Second()
+    {  
+ 	   for(int i=0;i<=30;i++)
+	   System.out.println("b"+i); 
+    } 
+} 
+class Third extends Second 
+{ 
+    public Third()
+    {
+	   for(int i=0;i<=15;i++)
+	   System.out.println("c"+i); 
+    }
+} 
+class MainThread
+{ 
+    public static void main(String[] args)
+    { 
+        Third c = new Third(); 
+      	c.start();
+    } 
+}
+    
