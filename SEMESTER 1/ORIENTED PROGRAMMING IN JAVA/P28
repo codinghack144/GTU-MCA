@@ -1,0 +1,27 @@
+import java.util.*; 
+class Main_UL
+{
+	public static void main(String args[])
+  {
+	    Scanner s=new Scanner(System.in);
+	    System.out.println("Enter a string:");
+	    String str=s.next();
+	    System.out.println("Given string is "+str); 
+	    if(str.toLowerCase().equals(str))
+      {
+	      System.out.println("Given string"+str+" is in lower case.");
+	      str=str.toUpperCase();
+	      System.out.println("Reverse case given below");
+	      System.out.println(str);
+	     }
+	    else if(str.toUpperCase().equals(str))
+      {
+	    System.out.println("Given string "+str+" is in upper case.");
+	    str=str.toLowerCase();
+	    System.out.println("Reverse case given below");
+      System.out.println(str);
+      }
+    else 
+       System.out.println("Given string "+str+" neither  in uppercase nor  lowercase");
+    }
+}
