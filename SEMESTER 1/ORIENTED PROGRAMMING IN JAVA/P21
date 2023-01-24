@@ -1,0 +1,16 @@
+final class A
+ {
+  final int price=8500; 
+  void dis( )
+  {   
+   System.out.println("Final price :"+price);
+   }
+}
+class Main_Final
+{
+  public static void main(String args[])
+  {
+    A h=new A();
+    h.dis();
+  }
+}
