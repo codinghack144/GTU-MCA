@@ -1,0 +1,36 @@
+class MainClass
+{  	  
+	public static void doMyTask() throws ArithmeticException
+	{
+		int a=24/4;    //24/0
+	}
+	
+    static void validateAge(int age)
+    {                       
+      age=20;        //12
+		if(age<18)  
+			throw new ArithmeticException("you can not do votting");  
+		else
+		{			
+			System.out.println("welcome, you can vote");  		
+			doMyTask();
+		}
+    }  
+    
+	public static void main(String args[])
+  {  		
+		try
+    {
+			validateAge(80);
+		}
+		catch(ArithmeticException e)
+    {
+			System.out.println("from catch block : "+e);
+		}				
+		finally
+    {
+			System.out.println("from finally block : ");
+		}
+		System.out.println("remaining code");
+	}  
+}
