@@ -1,0 +1,87 @@
+import java.util.*;
+interface Up<E>
+{
+  public boolean execute(E obj);
+}
+final class Algorithm
+{
+  public static <E> int count(Collection<E> c, Up<E> p)
+  {
+    int count = 0;
+    for (E element : c)
+    {
+      if(p.execute(element))
+      {
+        ++count;
+      }
+    }
+    return count;
+  }
+}
+class Odd implements Up<Integer> 
+{
+  public boolean execute(Integer num) 
+  {
+    return num % 2 != 0;
+  }
+}
+
+class Even implements Up<Integer> 
+{
+  public boolean execute(Integer num) 
+  {
+    return num % 2 == 0;
+  }
+}
+
+class Prime implements Up<Integer> 
+{
+  public boolean execute(Integer num) 
+  {
+    if (num == 0 || num == 1) 
+    {
+      return false;
+    }
+    for (int i = 2; i * i <= num; i++) 
+    {
+      if (num % i == 0) 
+      {
+        return false;
+      }
+    }
+    return true;
+  }
+}
+
+class Palindrome implements Up<Integer> 
+{
+  public boolean execute(Integer num) 
+  {
+    int r, sum = 0, temp;
+    temp = num;
+    while (num > 0) 
+    {
+      r = num % 10;
+      sum = (sum * 10) + r;
+      num = num / 10;
+    }
+    return (temp == sum);
+  }
+}
+
+public class OddEvenCollections 
+{
+  public static void main(String[] args) 
+  {
+    Collection<Integer> ci = Arrays.asList(13, 6, 200, 2, 103, 24, 74, 210);
+    int count = 0;
+    count = Algorithm.count(ci, new Odd());
+    System.out.println("Odd Numbers: " + count);
+    count = Algorithm.count(ci, new Even());
+    System.out.println("Even Numbers: " + count);
+    count = Algorithm.count(ci, new Prime());
+    System.out.println("Prime Numbers: " + count);
+    count = Algorithm.count(ci, new Palindrome());
+    System.out.println("Palindrome Numbers: " + count);
+  }
+}
