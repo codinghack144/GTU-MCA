@@ -1,0 +1,33 @@
+class Circle{
+ double radius,area;
+ static int count=0;
+ {
+  count=count+1;
+ }
+ Circle()
+ {
+  radius=24;
+ }
+ void cal()
+{
+ area=3.142*radius*radius;
+ }
+ void display(){
+  System.out.println("\nRadius : "+radius);
+  System.out.println("Area of Circle : "+area);
+  }
+}
+class Main_Circle{
+  public static void main(String args[]) {
+  circle c1=new circle();
+  circle c2=new circle();
+  circle c3=new circle();
+  c1.cal();
+  c1.disp();
+  c2.cal();
+  c2.disp();
+  c3.cal();
+  c3.disp();
+  System.out.println("\nNumber of created Object : "+circle.count);
+}
+}
