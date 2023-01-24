@@ -1,0 +1,44 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+class FileClass 
+{
+    public static void main(String[] args) 
+{
+        try
+        {
+            String verify, putData;
+            File file = new File("file.txt");
+            file.createNewFile(); 
+           FileWriter fw = new FileWriter(file);
+            BufferedWriter bw = new BufferedWriter(fw);
+            bw.write("Welcome to GMCA");
+            bw.flush();
+            //bw.close();
+	          File file1 = new File("file1.txt");
+            file1.createNewFile();
+	          FileWriter fw1 = new FileWriter(file1);			
+	          BufferedWriter bw1 = new BufferedWriter(fw1);			
+            FileReader fr = new FileReader(file);
+            BufferedReader br = new BufferedReader(fr);
+            while( (verify=br.readLine()) != null )
+            {  
+                if(verify != null)
+                { 
+                  putData = verify.replaceAll("java is language", "new file");  			
+	                bw1.write(putData);   		
+	               System.out.println(String.valueOf(putData)); // read file and print on screen
+                }
+	              bw1.flush();
+            }
+            br.close();
+        }
+		catch(IOException e)
+    {
+			e.printStackTrace();
+    }
+   }
+}
