@@ -1,0 +1,43 @@
+class MyThread extends Thread
+{
+    MyThread(String s)
+    {
+        super(s);       
+    }
+    public void run()
+    {
+      for(int i=1;i<=50;i++)
+      {   
+        try
+        {
+           if(Thread.currentThread().getName()=="Thread-1")
+           {
+	           if(i%2==0)
+           {
+	            System.out.println(Thread.currentThread().getName()+ " : "+i);
+        	 }
+        }
+        if(Thread.currentThread().getName()=="Thread-2")
+        {
+	       if(i%2!=0)
+         {
+	         System.out.println(Thread.currentThread().getName()+ " : "+i);
+	       }
+       }
+   }			
+    catch(Exception e){}
+   }
+ }
+}
+class MainThread
+{
+    public static void main(String arg[]) throws Exception
+    {
+        System.out.println("Thread name : "+Thread.currentThread().getName());
+        MyThread t1=new MyThread("Thread-1");
+        t1.start();
+        Thread.sleep(1000);
+        MyThread t2=new MyThread("Thread-2");
+        t2.start();
+    }
+}
