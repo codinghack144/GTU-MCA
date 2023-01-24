@@ -1,0 +1,64 @@
+package apack;
+public class A
+{
+ protected int protectedInt = 40;
+ private int privateInt = 30;
+ public int publicInt = 20;
+ public int getPrivateVariableValue()
+ {
+  return this.privateInt;
+ }
+ public int getProtectedVariableValue()
+ {
+  return this.protectedInt;
+ }
+}
+
+package bpack;
+import apack.*;
+public class B
+{
+ A a = new A();
+ public int DisplayPrivate()
+ {
+  return a.getPrivateVariableValue();
+ }
+ public int DisplayProtected()
+ {
+  return a.getProtectedVariableValue();
+ }
+ public int DisplayPublic()
+ {
+  return a.publicInt;
+ }
+}
+
+package cpack;
+import bpack.*;
+public class C
+{
+ B b = new B();
+ public int DisplayPrivate()
+ {
+  return b.DisplayPrivate();
+ }
+ public int DisplayProtected()
+ {
+  return b.DisplayProtected();
+ }
+ public int DisplayPublic()
+ {
+  return b.DisplayPublic();
+ }
+}
+
+package dpack;
+import cpack.*;
+class ProtectedDemo
+{
+ public static void main(String[] args)
+ {
+  C c = new C();
+  System.out.print("Private : " + c.DisplayPrivate() + "\nProtected: " + c.DisplayProtected() + "\nPublic: " + c.DisplayPublic());
+ }
+}
