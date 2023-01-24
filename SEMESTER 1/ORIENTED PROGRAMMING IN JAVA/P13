@@ -1,0 +1,44 @@
+class Stud
+{
+  public int mark=85;
+  static int count=0;
+  {
+   count=count+1;
+  }
+   int en_no;
+   String name;
+   String gender;
+   Stud()
+   {
+    en_no=101;
+    name="Jyoti";
+    gender="Female";
+    mark=80;
+   }
+   Stud(int en,String na,int m)
+   {
+     en_no=en;
+     name=na;
+     gender="Male";
+     mark=this.mark;
+   }
+   void display()
+   {
+     System.out.println("Enrollment no : "+en_no);
+     System.out.println("Name : "+name);
+     System.out.println("Gender : "+gender);
+     System.out.println("Mark : "+mark);
+     System.out.println("");
+   }
+  }
+  class Main_Stud
+  {
+    public static void main(String args[])
+    {
+     std S1=new std();
+     std S2=new std(102,"Jay",66);
+     S1.disp();
+     S2.disp();
+     System.out.println("Number of object : "+std.count);
+    }
+  }
