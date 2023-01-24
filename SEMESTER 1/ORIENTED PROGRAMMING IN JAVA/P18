@@ -1,0 +1,37 @@
+class Vehicle
+{
+  String vehicle_type="car";
+  void disp()
+  {
+    System.out.println("Vehicle Type : "+vehicle_type);
+  }
+}
+class Car extends Vehicle{
+  String model,company_name;
+  int m_year=2019;
+  Car()
+  {
+    model="Eon";company_name="Hyundai";
+  }
+  Car(String md,String cn)
+  {
+    model=md;company_name=cn;
+  }
+  void disp()
+  {
+   System.out.println("\nVehicle Type : "+this.vehicle_type);
+   System.out.println("Company Name : "+company_name);
+   System.out.println("Model Name : "+model);
+   System.out.println("Manufacturing Year : "+m_year);
+  }
+}
+class Main_Vehicle
+{
+   public static void main(String args[])
+   {
+     Car c=new Car();
+     c.disp();
+     Car c1=new Car("Swift","Maruti Suzuki ");
+     c1.disp();
+    }
+}
