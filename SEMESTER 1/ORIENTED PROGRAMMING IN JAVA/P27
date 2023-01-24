@@ -1,0 +1,17 @@
+class Number_1<T>{
+ public T t;
+ Number_1(T t){
+ this.t = t;
+ }
+ public T getValue(){
+ return this.t;
+ }
+}
+class Generic{
+ public static void main(String[] args){
+ Number_1<Integer> intObj = new Number_1<Integer>(1408);
+ Number_1<Float> floatObj = new Number_1<Float>(24.06F);
+ System.out.println("Integer: " + intObj.getValue() + "\nFloat: " + floatObj.getValue()); 
+ }
+}
+
