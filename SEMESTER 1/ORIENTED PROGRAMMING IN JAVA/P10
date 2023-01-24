@@ -1,0 +1,19 @@
+import java.util.*;
+public class Clarg
+{
+	public static void main(String args[])
+	{
+		String arr[] = {"First", "Second", "Third", 
+		                "Fourth", "Fifth", "Sixth", 
+		                "Seventh", "Eighth", "Nineth",
+		                "tenth", "eleventh","twelveth",
+		                "thirteenth","fourteenth",
+		                "fifteenth","sixteenth","Seventeenth",
+		                "Eighteenth","Nineteenth","twentyth"};
+		System.out.println("Number of arguments = "+args.length);
+		for(int i=0;i<args.length;i++)
+		{
+			System.out.println((i+1)+": "+ arr[i]+ " Student Name is = "+args[i]);
+		}
+	}
+}
