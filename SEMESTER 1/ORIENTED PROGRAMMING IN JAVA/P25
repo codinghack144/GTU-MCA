@@ -1,0 +1,85 @@
+package exam;
+interface Exam
+{ 
+  boolean pass(int marks); 
+}
+interface Classify
+{ 
+  String division(int average); 
+}
+public class Result implements Exam,Classify
+{
+ public boolean pass(int marks){ return (marks>=50); 
+}
+ public String division(int average)
+ {
+   if(average>=60)
+   {
+     return "First";
+   }
+  else if(average>=50)
+  {
+    return "Second";
+  }
+  else
+  {
+   return "No Division";
+  }
+ }
+}
+package student;
+import exam.*;
+public class Student extends Result
+{
+ public String enroll, name;
+ public int m1, m2, m3, m4, m5 , m6;
+ public Student()
+ { 
+   this("","",0,0,0,0,0,0); 
+ }
+ public Student(String e,String n,int m1,int m2,int m3,int m4,int m5,int m6)
+ {
+  this.enroll = e;
+  this.name = n;
+  this.m1 = m1;
+  this.m2 = m2;
+  this.m3 = m3;
+  this.m4 = m4;
+  this.m5 = m5;
+  this.m6 = m6;
+  }
+ public int getTotalMarks()
+ {
+   return (this.m1 + this.m2 + this.m3 + this.m4 + this.m5 + this.m6); 
+ }
+public int getAverageMarks()
+{ 
+ return (this.m1 + this.m2 + this.m3 + this.m4 + this.m5 + this.m6)/6; 
+}
+ public void details()
+ {
+   System.out.println("Enrollment Number : "+ this.enroll);
+   System.out.println("Sub 1 Marks : " + this.m1);
+   System.out.println("Sub 2 Marks : " + this.m2);
+   System.out.println("Sub 3 Marks : " + this.m3);
+   System.out.println("Sub 4 Marks : " + this.m4);
+   System.out.println("Sub 5 Marks : " + this.m5);
+   System.out.println("Sub 6 Marks : " + this.m6);
+   System.out.println("Average Marks : " +this.getAverageMarks());
+   System.out.println("Total : " +this.getTotalMarks());
+   String resultvalue = this.pass(this.getTotalMarks())?"PASS":"FAIL";
+   System.out.println("Result : " + resultvalue);
+   System.out.println("Division : " + this.division(this.getAverageMarks()));
+ }
+}
+
+package dbc;
+import student.*;
+class Marksheets
+{
+ public static void main(String args[])
+ {
+  Student s = new Student("25","Jyoti",40,60,70,90,100,80);
+  s.details();
+ }
+}
