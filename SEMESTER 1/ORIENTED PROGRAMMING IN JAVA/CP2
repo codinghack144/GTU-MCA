@@ -1,0 +1,32 @@
+import java.util.*;
+class Employee
+{
+	int emp_code,basic_sal,gross_sal;
+	String emp_name;
+	Employee()
+  {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Employee code: ");
+		emp_code = sc.nextInt();
+		System.out.print("Enter Employee name: ");
+		emp_name = sc.next();
+		System.out.print("Enter Employee Basic salary: ");
+		basic_sal = sc.nextInt();
+		int ma = (20 * basic_sal) / 100;
+		int hra = (30 * basic_sal) / 100;	
+		gross_sal = basic_sal+ma+hra;
+}
+	public static void main(String args[])
+  {
+		Employee s1 = new Employee();
+		Employee s2 = new Employee();
+		Employee s3 = new Employee();
+		Employee s4 = new Employee();
+		ArrayList<Integer> ls = new ArrayList<Integer>();	
+		ls.add(s1.gross_sal);
+		ls.add(s2.gross_sal);
+		ls.add(s3.gross_sal);
+    ls.add(2,s4.gross_sal);
+		System.out.println("List of Employee gross salary :" + ls);
+	}
+}
