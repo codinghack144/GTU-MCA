@@ -1,0 +1,47 @@
+import java.util.*;
+class Customer 
+{
+    int item_count[]=new int[3];
+    int item_unit_price[]=new int[3];
+    String item_name[]=new String[3];
+    int bill_no,total_price;
+    String cust_mobile_no;
+     Customer()
+     {
+		total_price=0;
+		Scanner sc = new Scanner(System.in);
+       		 System.out.print("Enter bill no: ");
+		bill_no = sc.nextInt();
+		System.out.print("Enter customer mobile number: ");
+		cust_mobile_no = sc.next();
+		for(int i=0;i<3;i++)
+    {
+			System.out.print("Enter name of item: ");
+			item_name[i] = sc.next();
+            			System.out.print("Enter quantity of item: ");
+			item_count[i] = sc.nextInt();
+            			System.out.print("Enter price of item: ");
+			item_unit_price[i] = sc.nextInt();
+           			 int temp = item_unit_price[i]*item_count[i];
+			total_price = total_price+temp;
+		}	
+	}
+    public static void main(String args[])
+{
+        Customer s1 = new Customer();
+        Customer s2 = new Customer();
+        Customer s3 = new Customer();
+        Map<String , Integer> m = new HashMap<String , Integer>();  
+        m.put(s1.cust_mobile_no, s1.total_price);     
+        m.put(s2.cust_mobile_no, s2.total_price);        
+        m.put(s3.cust_mobile_no, s3.total_price);  
+        for(Map.Entry map:m.entrySet()){    
+            System.out.println("Phone no: "+map.getKey()+" Total amount: "+map.getValue());    
+  }  
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Phone for search particular customers bill  :");  
+        String x = sc.next();  
+        int value = m.get(x);
+        System.out.println("Bill total amount is is: "+value);    
+    }
+}
