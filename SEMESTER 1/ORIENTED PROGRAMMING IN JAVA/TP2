@@ -1,0 +1,28 @@
+class MyThread implements Runnable 
+{
+	private String str;
+	private int num;
+
+	MyThread(String s, int n) 
+	{
+		str=new String (s);
+		num=n;
+	}
+	
+	public void run() 
+	{
+		for (int i=1; i<=num; i++)
+		{
+			System.out.println(str + " ");
+		}
+	}
+}
+class MainThread
+{
+	public static void main(String args[]) 
+	{
+		MyThread t = new MyThread ("java",5);
+		new Thread(t).start();
+
+	}
+}
