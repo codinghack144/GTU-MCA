@@ -1,0 +1,16 @@
+final class X // final class
+{
+    final int x=40;//final variable  
+    final public void display() //final method
+     {
+        System.out.println("Final Variable is : "+x);
+     }
+}
+class Main_Final
+{  	  
+    public static void main(String args[])
+     {  
+         X obj=new  X();  		
+         System.out.println("Final Variable is : "+obj.x);
+     }  
+}
