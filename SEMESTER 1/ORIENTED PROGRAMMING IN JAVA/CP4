@@ -1,0 +1,34 @@
+import java.util.*;
+class Students
+{
+	int std_id,total_marks;
+	String std_name;
+	int[] marks = new int[3];
+	Students()
+  {
+		total_marks=0;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Enter student name: ");
+		std_name = sc.next();
+		System.out.print("Enter student ID: ");
+		std_id = sc.nextInt();
+		for(int i=0;i<3;i++)
+    {
+			System.out.print("Enter marks of sub"+i+": ");
+			marks[i] = sc.nextInt();
+			total_marks = total_marks+marks[i];
+		}	
+	}
+	public static void main(String args[])
+  {
+		Students s1 = new Students();
+		Students s2 = new Students();
+		Students s3 = new Students();
+		LinkedList ls = new LinkedList();	
+		ls.add(s1.total_marks);
+		ls.add(s2.total_marks);
+		ls.add(s3.total_marks);
+        		Collections.sort(ls);
+		System.out.println("Sorted List is:" + ls);
+	}
+}
