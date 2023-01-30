@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  int i,n,sum=0,num;
+  float avg;
+  printf("Enter the Range \n");
+  scanf("%d",&n);
+  printf("\n Please enter the elements ony by one \n");
+  for(i=0;i<n;++i)
+  {scanf("%d",&num);
+    sum=sum+num;}
+  avg=sum/n;
+  printf("\n Sum of the %d Numbers=%d",n,sum);
+  printf("\n Average of the %d Numbers=%.2f",n,avg);
+  getch();
+}
