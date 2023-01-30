@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) 
+{
+  // Declare variables for the length of the ladder and the angle it makes with the ground
+  double ladder_length, angle;
+
+  // Get input from the user for the length of the ladder and the angle it makes with the ground
+  printf("Enter the length of the ladder: ");
+  scanf("%lf", &ladder_length);
+  printf("Enter the angle of the ladder with the ground (in degrees): ");
+  scanf("%lf", &angle);
+
+  // Convert the angle to radians
+  double angle_radians = angle * M_PI / 180;
+
+  // Calculate the height of the ladder using the formula: h = l * sin(angle)
+  double height = ladder_length * sin(angle_radians);
+
+  // Print the height of the ladder
+  printf("The height of the ladder is: %lf\n", height);
+
+  return 0;
+}
