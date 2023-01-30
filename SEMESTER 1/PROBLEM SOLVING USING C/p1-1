@@ -1,0 +1,11 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ clrscr();
+ printf("Hello World! \n");
+ printf("My Name is Jyoti Thakur \n");
+ printf("Address is Memnagar,Ahmedabad,Gujarat");
+ getch();
+}
+
