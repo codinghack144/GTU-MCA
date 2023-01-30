@@ -1,0 +1,14 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+  float a,b,c,d,e,sum,avg;
+  clrscr();
+  printf("enter 5 integers:\n");
+  scanf("%f %f %f %f %f",&a,&b,&c,&d,&e);
+  sum=a+b+c+d+e;
+  avg=(a+b+c+d+e)/5;
+  printf("Sum :%.2f \n",sum);
+  printf("Average is: %.2f",avg);
+  getch();
+}
