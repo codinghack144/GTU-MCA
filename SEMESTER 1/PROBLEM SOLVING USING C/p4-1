@@ -1,0 +1,16 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ clrscr();
+ int num1,num2,q,x;
+ printf("Enter Numerator:");
+ scanf("%d",&num1);
+ printf("Enter Denominator:");
+ scanf("%d",&num2);
+ q=num1/num2;
+ x=num1%num2;
+ printf("Quotient=%d\n",q);
+ printf("Remainder=%d",x);
+ getch();
+}
