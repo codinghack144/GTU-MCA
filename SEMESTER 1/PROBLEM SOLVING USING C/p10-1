@@ -1,0 +1,25 @@
+#include <stdio.h>
+int factfunc(int num);
+void main()
+{
+int i,num,fact=1;
+printf("\nEnter a Number: ");
+scanf("%d",&num);
+for(i=1;i<=num;i++)
+{
+ fact *= i;
+}
+printf("\nFactorial(By For Loop) %d! is : %d",num,fact);
+printf("\nFactorial(By Recursion) %d! is : %d",num,factfunc(num));
+}
+int factfunc(int num)
+{
+  if(num>0)
+  {
+    return num * factfunc(num-1);
+  }
+  else
+  {
+    return 1;
+  }
+}
