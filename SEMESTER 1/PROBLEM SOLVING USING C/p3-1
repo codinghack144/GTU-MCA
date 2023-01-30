@@ -1,0 +1,24 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+  int choice;
+  double temp,ans;
+  printf("enter temp");
+  scanf("%f",&temp);
+  printf("1. Convert temperature F to C \n");
+  printf("2. Convert temperature C to F");
+  printf("enter your choice");
+  scanf("%d",&choice);
+  switch(choice)
+  {
+    case 1:ans=(temp-32)/1.8;
+	   printf("the temo in celsius is %lf",ans);
+    case 2:ans=(temp*1.8)+32;
+	   printf("the temp in farenheit is %lf",ans);
+	   break;
+   default:printf("wrong choice");
+	   break;
+  }
+  getch();
+}
