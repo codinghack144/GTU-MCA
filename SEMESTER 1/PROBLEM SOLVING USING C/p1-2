@@ -1,0 +1,12 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int x=2;
+ int y=7;
+ clrscr();
+ printf("Value of x is %d \n",x);
+ printf("Value of y is %d",y);
+ getch();
+}
+
