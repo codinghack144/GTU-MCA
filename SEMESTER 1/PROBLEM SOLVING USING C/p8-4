@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+int main(void) 
+{
+  double r, theta, x, y;
+  // ask the user to input the value of r
+  printf("Enter the value of r: ");
+  scanf("%lf", &r);
+  // ask the user to input the value of theta in degrees
+  printf("Enter the value of theta (in degrees): ");
+  scanf("%lf", &theta);
+  // convert theta from degrees to radians
+  theta = theta * M_PI / 180;
+  // calculate the x and y coordinates
+  x = r * cos(theta);
+  y = r * sin(theta);
+  // print the results
+  printf("The x coordinate is: %lf\n", x);
+  printf("The y coordinate is: %lf\n", y);
+  return 0;
+}
