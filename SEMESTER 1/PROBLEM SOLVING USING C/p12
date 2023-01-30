@@ -1,0 +1,33 @@
+#include <stdio.h>
+void main()
+{
+ int i, j, k, length;
+ printf("\nEnter The Range: ");
+ scanf("%d", &length);
+ int arr[10];
+ for (i = 0; i < length; i++)
+ {
+  printf("Enter Number %d: ",i+1);
+  scanf("%d", &arr[i]);
+ }
+ for (i = 0; i < length; i++)
+{
+  for (j = i + 1; j < length; j++)
+ {
+  if (arr[i] == arr[j])
+  {
+  for (k = j; k < length - 1; k++)
+  {
+    arr[k] = arr[k + 1];
+  }
+  length--;
+   j--;
+  }
+  }
+}
+   printf("Array After Removing Duplicates: ");
+   for (i = 0; i < length; i++)
+  {
+    printf(" %d ", arr[i]);
+  }
+}
