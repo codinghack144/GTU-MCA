@@ -1,0 +1,66 @@
+#include <stdio.h>
+void swapviatemp(int *a,int *b)
+{
+ int temp = *a;
+ *a = *b;
+ *b = temp;
+}
+void swapviaplusminus(int *a,int *b)
+{
+ *a = *a + *b;
+ *b = *a - *b;
+ *a = *a - *b;
+}
+void swapviamultiplication(int *a,int *b)
+{
+ *a = *a * *b;
+ *b = *a / *b;
+ *a = *a / *b;
+}
+void swapviaxor(int *a,int *b)
+{
+ *a = *a ^ *b;
+ *b = *a ^ *b;
+ *a = *a ^ *b;
+}
+int main()
+{
+ int num1 = 0,num2 = 0,choice = 0;
+ printf("Enter Two Numbers: ");
+ scanf("%d %d",&num1,&num2);
+ printf("1. Temp Varibale\n2. Plus Minus\n3. Multiplication\n4. Xor\nChoose Swapping Method: ");
+ scanf("%d",&choice);
+ printf("Before Swapping: ");
+ printf("%d %d\n",num1,num2);
+ switch(choice)
+ {
+ case 1:
+ {
+ swapviatemp(&num1,&num2);
+ break;
+ }
+ case 2:
+ {
+ swapviaplusminus(&num1,&num2);
+ break;
+ }
+case 3:
+{
+ swapviatemp(&num1,&num2);
+ break;
+ }
+ case 4:
+ {
+ swapviatemp(&num1,&num2);
+ break;
+ }
+ default:
+ {
+ printf("Invalid Choice");
+ return 0;
+ }
+ }
+ printf("After Swapping: ");
+ printf("%d %d\n",num1,num2);
+ return 0;
+}
