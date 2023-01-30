@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+  char firstname[20],middlename[20],lastname[20];
+  printf("enter your first name \n");
+  scanf("%s",firstname);
+  printf("enter your middle name \n");
+  scanf("%s",middlename);
+  printf("enter your last name \n");
+  scanf("%s",lastname);
+  printf("displaying your name \n");
+  printf("%s %s %s \n",firstname,middlename,lastname);
+  printf("%s %s %s \n",lastname,firstname,middlename);
+  getch();
+}
