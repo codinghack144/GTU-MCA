@@ -4,7 +4,7 @@
 void main()
 {
   clrscr();
-  char s[] ="ABCD";
+  char s[] ="ABCDE";
   int len=0;
   printf("Entered string is :%s \n",s);
   len=strlen(s);
