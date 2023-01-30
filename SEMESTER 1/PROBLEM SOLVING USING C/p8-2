@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) 
+{
+  // Ask the user for the initial velocity of the ball (in feet per second)
+  printf("Enter the initial velocity of the ball (in feet per second): ");
+  double velocity;
+  scanf("%lf", &velocity);
+
+  // Ask the user for the angle of the throw (in degrees)
+  printf("Enter the angle of the throw (in degrees): ");
+  double angle;
+  scanf("%lf", &angle);
+
+  // Convert the angle from degrees to radians
+  double angle_radians = angle * M_PI / 180.0;
+
+  // Calculate the maximum height reached by the ball using the formula
+  // height = (0.5 * v^2 * sin^2 θ ) / 32.2
+  double height = (0.5 * pow(velocity, 2) * pow(sin(angle_radians), 2)) / 32.2;
+
+  // Display the maximum height reached by the ball
+  printf("The maximum height reached by the ball is: %.2f feet\n", height);
+
+  return 0;
+}
