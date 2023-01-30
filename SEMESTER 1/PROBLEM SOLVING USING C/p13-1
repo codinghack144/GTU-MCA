@@ -1,0 +1,25 @@
+#include <stdio.h>
+void main()
+{
+    float A;
+    printf("\nEnter value of A: ");
+    scanf("%f", &A);
+    float S = 1, l = A, Mid = 0;
+    while (S < l)
+    {
+        Mid = (S + l) / 2;
+        if ((Mid * Mid) == A)
+        {
+            break;
+        }
+        else if ((Mid * Mid) < A)
+        {
+            S = Mid + 1;
+        }
+        else
+        {
+            l = Mid;
+        }
+    }
+    printf("Root is: %0.3f\n", Mid);
+}
