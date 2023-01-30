@@ -1,0 +1,15 @@
+#include <stdio.h>
+void main()
+{
+    float N, X, F = 0.0001, Root = 1, Temp = 2;
+    printf("Enter Number:");
+    scanf("%f", &N);
+    X = N;
+    while (F < (Temp - Root))
+    {
+        Root = 0.5 * (X + (N / X));
+        Temp = X;
+        X = Root;
+    }
+    printf("Root is: %0.3f\n", Root);
+}
