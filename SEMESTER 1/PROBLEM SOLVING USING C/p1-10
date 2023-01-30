@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<conio.h>
+#include<string.h>
+void main()
+{
+  clrscr();
+  char s[] ="ABCD";
+  int len=0;
+  printf("Entered string is :%s \n",s);
+  len=strlen(s);
+  printf("Length of string is :%d",len);
+  getch();
+}
