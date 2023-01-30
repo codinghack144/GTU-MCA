@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<conio.h>
+float c2f(float c)
+{
+  return ((c*9.0/5.0)+32.0);
+}
+int main()
+{
+  clrscr();
+  float c,f;
+  printf("enter temperature in celsius:");
+  scanf("%f",&c);
+  f= c2f(c);
+  printf("%.2f c= %.2f f",c,f);
+
+  getch();
+}
