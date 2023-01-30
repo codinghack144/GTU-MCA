@@ -1,7 +1,8 @@
 #include<stdio.h>
 #include<conio.h>
 void main()
-{
+{ 
+  clrscr();
   int i,n,sum=0,num;
   float avg;
   printf("Enter the Range \n");
